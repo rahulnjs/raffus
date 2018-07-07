@@ -84,7 +84,7 @@ public class Request {
 	
 	private void determineMIME() { 
 		String ext = this.resourceURI.substring(this.resourceURI.lastIndexOf(".") + 1);
-		String images = "bmp_gif_jpg_png_jpeg";
+		String images = "bmp_gif_jpg_png_jpeg_ico";
 		String application = "js_json ";
 		String text = "html_css"; 
 		if(images.indexOf(ext) >= 0) { 

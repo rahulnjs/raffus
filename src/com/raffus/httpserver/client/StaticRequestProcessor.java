@@ -35,7 +35,7 @@ public class StaticRequestProcessor implements RequestProcessor {
 			resCode = 404;
 		}
 		if (Server.opts.isLoggingEnabled())
-			System.out.println(
+			System.out.println(req.getMethod() + "\t" +
 					req.getResourceURI() + "\t" + req.getResourceType() + "\t" + resCode + "\t" + processingTime());
 	}
 
