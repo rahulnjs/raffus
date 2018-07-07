@@ -1,6 +1,7 @@
 package com.raffus.httpserver.server;
 
 import java.io.IOException;
+import java.net.BindException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -34,7 +35,11 @@ public class Server {
 			}
 			server.close();
 		} catch (IOException e) {
-			System.out.println("ERROR: " + e);
+			if(e instanceof BindException) {
+				System.out.println("Port " + this.port + " is already in use. Restart the server with a different port.");
+			} else {
+				System.out.println("Something went wrong. " + e);
+			}
 		}
 	}
 }

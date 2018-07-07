@@ -23,7 +23,7 @@ public class Response {
 
 	public void sendHeaders(long contentLength, String type, String httpCode) throws IOException {
 		out.write("HTTP/1.0 " + httpCode + "\r\n");
-		out.write("Content-Type: " + type + "\r\n");
+		out.write("Content-Type: " + type + "; charset=utf-8\"\r\n");
 		out.write("Content-Length: " + contentLength + "\r\n");
 		out.write("Cache-Control: " + Server.cacheHeaderVal + "\r\n");
 	}

@@ -84,15 +84,20 @@ public class Request {
 	
 	private void determineMIME() { 
 		String ext = this.resourceURI.substring(this.resourceURI.lastIndexOf(".") + 1);
-		String images = "bmp_gif_jpg_png_jpeg_ico";
+		String images = "bmp_gif_jpg_png_jpeg_ico_svg";
 		String application = "js_json ";
 		String text = "html_css"; 
 		if(images.indexOf(ext) >= 0) { 
 			resourceType = "image/" + ext; 
+			if(ext.equals("svg")) {
+				resourceType += "+xml";
+			}
 		} else if(application.indexOf(ext) >= 0) { 
 			resourceType = "application/" + (ext.equals("js") ? "javascript" : ext);
 		} else if(text.indexOf(ext) >= 0) {
 			resourceType = "text/" + ext;
+		} else {
+			resourceType = "text/plain";
 		}
 	}
 
