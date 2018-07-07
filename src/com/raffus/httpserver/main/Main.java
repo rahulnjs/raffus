@@ -11,27 +11,23 @@ public class Main {
 		ServerOptions opts = buildServerOption(s);
 		if (opts.needToPrintHelp()) {
 			printHelp();
-			System.exit(0);
-		}
-		if (opts.needToVersion()) {
+		} else if (opts.needToPrintVersion()) {
 			System.out.println(VER);
-			System.exit(0);
-		}
-		Server server = new Server(opts);
-		if (server != null) {
+		} else {
+			Server server = new Server(opts);
 			server.start();
 		}
 	}
 
 	private static ServerOptions buildServerOption(String[] args) {
-		String EMPTY_STRING="";
+		String EMPTY_STRING = "";
 		ServerOptions opt = new ServerOptions();
 		int i = 0; 
 		while(i < args.length) {
 			if("pdc".indexOf(args[i].charAt(1)) >= 0) {
-				opt.put(args[i],args[++i]);
+				opt.put(args[i], args[++i]);
 			} else { 
-				opt.put(args[i],EMPTY_STRING);
+				opt.put(args[i], EMPTY_STRING);
 			}
 			i++;
 		}

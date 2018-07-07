@@ -39,7 +39,7 @@ public class ServerOptions {
 		return opts.get("-help") != null;
 	}
 
-	public boolean needToVersion() {
+	public boolean needToPrintVersion() {
 		return opts.get("--v") != null;
 	}
 
