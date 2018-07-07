@@ -1,6 +1,6 @@
-# RaffuS
+# RaffuServer
 
-RaffuS is static http server built in Java. It is best suited for bulding prototypes without having a backend. Its fast and reliable.
+RaffuServer is static http server built in Java. It is best suited for bulding prototypes without having a backend. Its fast and reliable.
 
 ### How to run it
 
