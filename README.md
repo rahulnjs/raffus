@@ -2,6 +2,14 @@
 
 RaffuS is static http server built in Java. It is best suited for bulding prototypes without having a backend. Its fast and reliable.
 
+### How to run it
+
+          java -jar raffus.jar
+
+### For more options try
+
+          java -jar raffus.jar -help
+
 ![Imgur](https://i.imgur.com/fPILxU7.png)
 
 
