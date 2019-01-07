@@ -2,6 +2,7 @@ package com.raffus.httpserver.server;
 
 import java.io.IOException;
 import java.net.BindException;
+import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -23,8 +24,8 @@ public class Server {
 
 	public void start() {
 		try {
-			ServerSocket server = new ServerSocket(port);
-			System.out.println("Server running at: " + "http://localhost:" + port + "/\n\n");
+			ServerSocket server = new ServerSocket(port, 50, InetAddress.getLocalHost());
+			System.out.println("Server running at: " + "http://" + server.getInetAddress().getHostAddress() + ":" + port + "/\n\n");
 			if (!opts.isLoggingEnabled()) {
 				System.out.println(
 						"Logging is not enabled.\nFor logging" + " try restarting the server with '-l' switch.");
